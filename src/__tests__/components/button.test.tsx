@@ -37,7 +37,7 @@ it("renders correctly", () => {
       transition: background-color 0.2s,opacity 0.2s;
       height: 48px;
       padding: 0 24px;
-      background-color: #1FC7D4;
+      background-color: #D4AF31;
       color: white;
     }
 

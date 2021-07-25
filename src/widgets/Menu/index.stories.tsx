@@ -15,7 +15,7 @@ export default {
   argTypes: {},
 };
 
-const langs: Language[] = [...Array(20)].map((_, i) => ({ code: `en${i}`, language: `English${i}` }));
+const langs: Language[] = [...Array(20)].map((_, i) => ({ code: `en${i}`, language: `English${i}`, locale: `en${i}-locale` }));
 
 // This hook is used to simulate a props change, and force a re rendering
 const useProps = () => {
@@ -30,7 +30,6 @@ const useProps = () => {
     currentLang: "EN",
     cakePriceUsd: 0.023158668932877668,
     links,
-    profile: null,
   });
 
   useEffect(() => {
@@ -46,7 +45,6 @@ const useProps = () => {
         currentLang: "EN",
         cakePriceUsd: 0.023158668932877668,
         links,
-        profile: null,
       });
     }, 2000);
     return () => {
@@ -89,7 +87,6 @@ export const NotConnected: React.FC = () => {
   return (
     <BrowserRouter>
       <Menu
-        account={null}
         login={noop}
         logout={noop}
         isDark={false}

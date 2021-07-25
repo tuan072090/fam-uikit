@@ -128,10 +128,12 @@ const Menu: React.FC<NavProps> = ({
         />
         <Inner isPushed={isPushed} showMenu={showMenu}>
           <StyledNav showMenu={showMenu}>
-            <Flex>
-              <UserBlock account={account} login={login} logout={logout} />
-              {profile && <Avatar profile={profile} />}
-            </Flex>
+            {!!login && !!logout && (
+                <Flex>
+                  <UserBlock account={account} login={login} logout={logout} />
+                  {profile && <Avatar profile={profile} />}
+                </Flex>
+            )}
           </StyledNav>
           {children}
         </Inner>
