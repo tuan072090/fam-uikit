@@ -1,7 +1,7 @@
 import React from "react";
 import Button from "../../../components/Button/Button";
 import { useWalletModal } from "../../WalletModal";
-import { Login } from "../../WalletModal/types";
+import { Login } from "../../WalletModal";
 
 interface Props {
   account?: string;
@@ -16,21 +16,12 @@ const UserBlock: React.FC<Props> = ({ account, login, logout }) => {
     <div>
       {account ? (
         <Button
-          scale="sm"
-          variant="tertiary"
-          onClick={() => {
-            onPresentAccountModal();
-          }}
-        >
-          {accountEllipsis}
+          variant="subtle"
+          onClick={onPresentAccountModal}>
+          Connected: {accountEllipsis}
         </Button>
       ) : (
-        <Button
-          scale="sm"
-          onClick={() => {
-            onPresentConnectModal();
-          }}
-        >
+        <Button onClick={onPresentConnectModal}>
           Connect
         </Button>
       )}
